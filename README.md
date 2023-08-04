@@ -47,4 +47,68 @@ grows larger. For large numbers, more advanced primality testing algorithms like
 the Miller-Rabin primality test are preferred, as they have better time complexity for larger inputs.
 
 
+**Example 2:**
 
+```javascript 
+function isPrime(num){
+    let x=Math.ceil(Math.sqrt(num)) 
+    for(let i=2;i<=x;i++){
+        if(num%i==0){
+            return false
+        }
+    }
+    return true
+
+}
+
+console.log(isPrime(100))
+
+```
+
+### 2.Given an array of numbers, use reduce to find the sum of all even numbers in the array?
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const sumOfEvenNumbers = numbers.reduce((accumulator, currentValue) => {
+  if (currentValue % 2 === 0) {
+    return accumulator + currentValue;
+  } else {
+    return accumulator;
+  }
+}, 0);
+
+console.log(sumOfEvenNumbers); // Output: 30 (2 + 4 + 6 + 8 + 10)
+
+```
+
+### 3.Given an array of strings, use reduce to create an object that stores the frequency count of each string in the array?
+
+```javascript
+const stringsArray = ['apple', 'banana', 'orange', 'apple', 'banana', 'apple'];
+
+const frequencyCount = stringsArray.reduce((acc, currentValue) => {
+  acc[currentValue] = (acc[currentValue] || 0) + 1;
+  return acc;
+}, {});
+```
+### 4.Given a string, the task is to reverse the order of the words in the given string.
+
+Examples:
+Input: s = “geeks quiz practice code” 
+Output: s = “code practice quiz geeks”
+
+```javascript
+const inputString = "geeks quiz practice code";
+
+// Step 1: Split the input string into an array of words
+const wordsArray = inputString.split(" ");
+
+// Step 2: Reverse the array of words
+const reversedArray = wordsArray.reverse();
+
+// Step 3: Join the reversed array back into a string with spaces between words
+const outputString = reversedArray.join(" ");
+
+console.log(outputString);
+```
